@@ -7,7 +7,7 @@
 <ion-content>
     <img src="../../assets/imgs/completados.jpg" alt="">
     <ion-list>
-        <button ion-item *ngFor="let lista of whishesService.listas" (click)="itemSelected(lista)">
+        <button ion-item *ngFor="let lista of whishesService.listas">
             {{ lista.title }}
         </button>
     </ion-list>

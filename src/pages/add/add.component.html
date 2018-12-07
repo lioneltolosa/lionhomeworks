@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>{{newItems.title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+        <ion-list-header>
+            Tareas por hacer
+        </ion-list-header>
+        <ion-item>
+            <ion-label floating>New Item</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password"></ion-input>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <button ion-item detail-none>
+            <ion-icon name="square-outline" item-start></ion-icon>
+                {{ newItems.title }}
+        </button>
+    </ion-list>
+
+</ion-content>

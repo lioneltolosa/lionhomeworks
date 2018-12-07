@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PendingPage } from '../pages/pending/pending.components';
 import { FinishPage } from '../pages/finish/finish.components';
 import { WhishesService } from '../providers/wishes.service';
+import { AddPage } from '../pages/add/add.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WhishesService } from '../providers/wishes.service';
     HomePage,
     TabsPage,
     PendingPage,
-    FinishPage
+    FinishPage,
+    AddPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { WhishesService } from '../providers/wishes.service';
     HomePage,
     TabsPage,
     PendingPage,
-    FinishPage
+    FinishPage,
+    AddPage
   ],
   providers: [
     StatusBar,
