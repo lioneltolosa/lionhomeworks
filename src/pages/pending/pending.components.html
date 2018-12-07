@@ -1,9 +1,14 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title>Penging</ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <h2>Pending Tasks</h2>
+<ion-content>
+    <img src="../../assets/imgs/pendientes.jpg" alt="">
+    <ion-list>
+        <button ion-item *ngFor="let lista of whishesService.listas" (click)="itemSelected(lista)">
+          {{ lista.title }}
+        </button>
+    </ion-list>
 </ion-content>

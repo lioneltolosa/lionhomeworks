@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WhishesService } from '../../providers/wishes.service';
 
 @Component({
   selector: 'page-finish',
@@ -6,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FinishPage {
 
-  constructor() {}
+  constructor(public whishesService: WhishesService) {}
 
 }

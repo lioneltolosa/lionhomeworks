@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { PendingPage } from '../pages/pending/pending.components';
 import { FinishPage } from '../pages/finish/finish.components';
+import { WhishesService } from '../providers/wishes.service';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { FinishPage } from '../pages/finish/finish.components';
   providers: [
     StatusBar,
     SplashScreen,
+    WhishesService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

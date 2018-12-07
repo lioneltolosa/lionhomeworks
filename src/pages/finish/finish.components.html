@@ -1,9 +1,14 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
         <ion-title>Finish</ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <h2>Finish Tasks</h2>
+<ion-content>
+    <img src="../../assets/imgs/completados.jpg" alt="">
+    <ion-list>
+        <button ion-item *ngFor="let lista of whishesService.listas" (click)="itemSelected(lista)">
+            {{ lista.title }}
+        </button>
+    </ion-list>
 </ion-content>

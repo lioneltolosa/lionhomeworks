@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { WhishesService } from '../../providers/wishes.service';
+import { List } from '../../models/list.model';
 
 @Component({
     selector: 'page-pendientes',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
 })
 
 export class PendingPage {
+
+    constructor( public whishesService: WhishesService) {
+
+    }
+ 
+    itemSelected( list: List) {
+        console.log(list);
+    }
 
 }
