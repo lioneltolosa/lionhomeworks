@@ -15,7 +15,11 @@
             <ion-input [(ngModel)]="nameItem" type="text" (keyup.enter)="addItem()"></ion-input>
         </ion-item>
     </ion-list>
-    <ion-list>
+    <ion-list *ngIf="lista.items.length > 0">
+        <ion-list-header>
+            Tareas por hacer
+        </ion-list-header>
+
         <button *ngFor="let item of lista.items" 
                 ion-item detail-none 
                 class="animated fadeInDown"

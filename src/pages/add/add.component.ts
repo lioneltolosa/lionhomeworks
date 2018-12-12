@@ -28,7 +28,6 @@ export class AddPage {
             return;
         }
         const newItem = new ListItem (this.nameItem);
-        console.log(this.nameItem);
         this.lista.items.push( newItem)
         this.nameItem = '';
     }
