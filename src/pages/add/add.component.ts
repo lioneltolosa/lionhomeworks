@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { WhishesService } from '../../providers/wishes.service';
 import { NavParams } from 'ionic-angular';
-import { List } from '../../models/list.model';
+import { List, ListItem} from '../../models';
 
 @Component({
     selector: 'page-add',
@@ -10,7 +10,8 @@ import { List } from '../../models/list.model';
 
 export class AddPage {
 
-    newItems: List;
+    lista: List;
+    nameItem: String = '';
 
     constructor( public whishesService: WhishesService,
                  private navParams: NavParams ) {
@@ -19,7 +20,20 @@ export class AddPage {
         // this.newItems = this.navParams.get('title');
 
         const title = this.navParams.get('title');
-        this.newItems = new List( title );
+        this.lista = new List( title );
     }
 
+    addItem() {
+        if ( this.nameItem.length === 0 ) {
+            return;
+        }
+        const newItem = new ListItem (this.nameItem);
+        console.log(this.nameItem);
+        this.lista.items.push( newItem)
+        this.nameItem = '';
+    }
+
+    actualizarTarea(item: ListItem) {
+        item.complete = !item.complete;
+    }
 }

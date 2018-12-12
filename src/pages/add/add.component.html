@@ -1,6 +1,6 @@
 <ion-header>
     <ion-navbar color="primary">
-        <ion-title>{{newItems.title}}</ion-title>
+        <ion-title>{{lista.title}}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -12,17 +12,17 @@
         </ion-list-header>
         <ion-item>
             <ion-label floating>New Item</ion-label>
-            <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Password</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input [(ngModel)]="nameItem" type="text" (keyup.enter)="addItem()"></ion-input>
         </ion-item>
     </ion-list>
     <ion-list>
-        <button ion-item detail-none>
-            <ion-icon name="square-outline" item-start></ion-icon>
-                {{ newItems.title }}
+        <button *ngFor="let item of lista.items" 
+                ion-item detail-none 
+                class="animated fadeInDown"
+                (click)="actualizarTarea(item)">
+            <ion-icon *ngIf="item.complete" name="checkbox" item-start></ion-icon>
+            <ion-icon *ngIf="!item.complete" name="square-outline" item-start></ion-icon>
+               {{item.desc}}
         </button>
     </ion-list>
 
