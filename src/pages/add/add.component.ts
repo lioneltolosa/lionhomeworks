@@ -5,7 +5,12 @@ import { List, ListItem} from '../../models';
 
 @Component({
     selector: 'page-add',
-    templateUrl: 'add.component.html'
+    templateUrl: 'add.component.html',
+    styles: [`
+        ion-item-options .button:last-child {
+            padding: 0 !important;
+        }
+    `]
 })
 
 export class AddPage {
@@ -34,5 +39,9 @@ export class AddPage {
 
     actualizarTarea(item: ListItem) {
         item.complete = !item.complete;
+    }
+
+    borrarItem(idx : number) {
+        this.lista.items.splice(idx, 1)
     }
 }
