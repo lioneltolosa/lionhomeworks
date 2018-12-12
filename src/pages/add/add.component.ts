@@ -26,6 +26,8 @@ export class AddPage {
 
         const title = this.navParams.get('title');
         this.lista = new List( title );
+
+        this.whishesService.agregarLista ( this.lista )
     }
 
     addItem() {
