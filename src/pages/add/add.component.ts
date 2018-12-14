@@ -20,14 +20,19 @@ export class AddPage {
 
     constructor( public whishesService: WhishesService,
                  private navParams: NavParams ) {
-        console.log(this.navParams.get('title'));
+
+        // console.log(this.navParams.get('title'));
 
         // this.newItems = this.navParams.get('title');
 
         const title = this.navParams.get('title');
-        this.lista = new List( title );
 
-        this.whishesService.agregarLista ( this.lista )
+        if ( this.navParams.get ('lista')) {
+            this.lista = this.navParams.get ('lista');
+        } else {
+            this.lista = new List( title );
+            this.whishesService.agregarLista ( this.lista )
+        }
     }
 
     addItem() {
@@ -35,8 +40,11 @@ export class AddPage {
             return;
         }
         const newItem = new ListItem (this.nameItem);
-        this.lista.items.push( newItem)
+        this.lista.items.push( newItem )
+        this.whishesService.guardarStorage();
         this.nameItem = '';
+
+        // localStorage.setItem('data', JSON.stringify ( this.lista ));
     }
 
     actualizarTarea(item: ListItem) {
@@ -44,6 +52,6 @@ export class AddPage {
     }
 
     borrarItem(idx : number) {
-        this.lista.items.splice(idx, 1)
+        this.lista.items.splice( idx, 1 );
     }
 }

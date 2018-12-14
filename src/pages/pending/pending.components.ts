@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { WhishesService } from '../../providers/wishes.service';
-import { List } from '../../models/list.model';
+import { List } from '../../models';
 import { NavController, AlertController } from 'ionic-angular';
 import { AddPage } from '../add/add.component';
 
@@ -17,8 +17,13 @@ export class PendingPage {
 
     }
  
-    itemSelected( list: List) {
-        console.log(list);
+    itemSelected( lista: List) {
+        console.log(lista);
+
+        this.navCtrl.push( AddPage, {
+            title: lista.title,
+            lista: lista
+        })
     }
 
     // addList() {
@@ -50,6 +55,7 @@ export class PendingPage {
                     if ( data.title.length === 0 ) {
                         return;
                     }
+                    
                     this.navCtrl.push( AddPage, {
                         title: data.title
                     })

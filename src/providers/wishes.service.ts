@@ -31,7 +31,6 @@ export class WhishesService {
     }
 
     cargarStorage() {
-
         if ( localStorage.getItem('data')) {
             this.listas = JSON.parse(localStorage.getItem('data'));
         } else {

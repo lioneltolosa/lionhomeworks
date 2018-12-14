@@ -1,18 +1,20 @@
 <ion-header>
     <ion-navbar color="primary">
-        <ion-title>{{lista.title}}</ion-title>
+        <ion-title>{{ lista.title }}</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
-
     <ion-list>
         <ion-list-header>
             Tareas por hacer
         </ion-list-header>
         <ion-item>
             <ion-label floating>New Item</ion-label>
-            <ion-input [(ngModel)]="nameItem" type="text" (keyup.enter)="addItem()"></ion-input>
+            <ion-input [(ngModel)]="nameItem" 
+                       type="text" 
+                       (keyup.enter)="addItem()">
+            </ion-input>
         </ion-item>
     </ion-list>
     <ion-list *ngIf="lista.items.length > 0">
@@ -27,7 +29,7 @@
                     (click)="actualizarTarea(item)">
                 <ion-icon *ngIf="item.complete" name="checkbox" item-start></ion-icon>
                 <ion-icon *ngIf="!item.complete" name="square-outline" item-start></ion-icon>
-                {{item.desc}}
+                {{ item.desc }}
             </button>
 
             <ion-item-options side="right">

@@ -7,7 +7,8 @@
 <ion-content>
     <img src="../../assets/imgs/pendientes.jpg" alt="">
     <ion-list>
-        <button ion-item *ngFor="let lista of whishesService.listas" (click)="itemSelected(lista)">
+        <button ion-item *ngFor="let lista of whishesService.listas" 
+                (click)="itemSelected(lista)">
           {{ lista.title }}
         </button>
     </ion-list>
@@ -15,5 +16,4 @@
     <ion-fab bottom right>
         <button (click)="showPrompt()" ion-fab><ion-icon name="add"></ion-icon></button>
     </ion-fab>
-
 </ion-content>
