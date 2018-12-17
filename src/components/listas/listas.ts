@@ -37,12 +37,11 @@ export class ListasComponent {
     const prompt = this.alertController.create( {
       title: 'Edit Name',
       message: "Edit name the list",
-      inputs: [
-          {
-            name: 'title',
-            placeholder: 'Name the list',
-            value: lista.title
-          }],
+      inputs: [{
+        name: 'titulo',
+        placeholder: 'Nombre de la lista',
+        value: lista.title
+    }],
       buttons: [
           {
             text: 'Cancel',

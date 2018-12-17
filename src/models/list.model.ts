@@ -1,14 +1,14 @@
 import { ListItem } from './list-item.model';
 
 export class List {
-    id: Number;
-    title: String;
+    id: number;
+    title: string;
     createIn: Date;
     finishIn: Date;
-    finish: Boolean;
+    finish: boolean;
     items: ListItem[];
 
-    constructor( title: String ) {
+    constructor( title: string ) {
         this.title = title;
 
         this.finish = false;
