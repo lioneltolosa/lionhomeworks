@@ -12,12 +12,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { PendingPage } from '../pages/pending/pending.components';
 import { FinishPage } from '../pages/finish/finish.components';
 import { AddPage } from '../pages/add/add.component';
+import { ListasComponent } from '../components/listas/listas';
+
 
 // Services
 import { WhishesService } from '../providers/wishes.service';
 
 // Pipes
 import { FilterCompletePipe } from '../pipes/filter-complete/filter-complete';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { FilterCompletePipe } from '../pipes/filter-complete/filter-complete';
     PendingPage,
     FinishPage,
     AddPage,
-    FilterCompletePipe
+    FilterCompletePipe,
+    ListasComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { FilterCompletePipe } from '../pipes/filter-complete/filter-complete';
     TabsPage,
     PendingPage,
     FinishPage,
-    AddPage
+    AddPage,
+    ListasComponent
   ],
   providers: [
     StatusBar,

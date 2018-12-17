@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { WhishesService } from '../../providers/wishes.service';
 import { List } from '../../models';
 import { NavController, AlertController } from 'ionic-angular';
@@ -16,24 +16,13 @@ import { AddPage } from '../add/add.component';
 
 export class PendingPage {
 
+    // @Input: 
+
     constructor( public whishesService: WhishesService,
                  private navCtrl: NavController,
                  private alertCtrl: AlertController) {
     }
  
-    itemSelected( lista: List) {
-        console.log(lista);
-
-        this.navCtrl.push( AddPage, {
-            title: lista.title,
-            lista: lista
-        })
-    }
-
-    borrarLista(lista: List) {
-        this.whishesService.borrarLista( lista );
-    }
-
     // addList() {
     //     this.navCtrl.push( AddPage )
     // }
