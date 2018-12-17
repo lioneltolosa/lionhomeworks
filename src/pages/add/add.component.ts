@@ -49,9 +49,24 @@ export class AddPage {
 
     actualizarTarea(item: ListItem) {
         item.complete = !item.complete;
+
+        const pending = this.lista.items.filter( itemData => {
+            return !itemData.complete;
+        }).length;
+
+        if ( pending === 0) {
+            this.lista.finish = true;
+            this.lista.finishIn = new Date();
+        } else {
+            this.lista.finish = false;
+            this.lista.finishIn = null;
+        }
+
+        this.whishesService.guardarStorage();
     }
 
     borrarItem(idx : number) {
         this.lista.items.splice( idx, 1 );
+        this.whishesService.guardarStorage();
     }
 }

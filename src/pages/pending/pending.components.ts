@@ -6,7 +6,12 @@ import { AddPage } from '../add/add.component';
 
 @Component({
     selector: 'page-pendientes',
-    templateUrl: 'pending.components.html'
+    templateUrl: 'pending.components.html',
+    styles: [`
+        ion-item-options .button:last-child {
+            padding: 0 !important;
+        }
+    `]
 })
 
 export class PendingPage {
@@ -14,7 +19,6 @@ export class PendingPage {
     constructor( public whishesService: WhishesService,
                  private navCtrl: NavController,
                  private alertCtrl: AlertController) {
-
     }
  
     itemSelected( lista: List) {
@@ -24,6 +28,10 @@ export class PendingPage {
             title: lista.title,
             lista: lista
         })
+    }
+
+    borrarLista(lista: List) {
+        this.whishesService.borrarLista( lista );
     }
 
     // addList() {

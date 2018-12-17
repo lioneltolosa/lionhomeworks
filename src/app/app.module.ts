@@ -16,13 +16,17 @@ import { AddPage } from '../pages/add/add.component';
 // Services
 import { WhishesService } from '../providers/wishes.service';
 
+// Pipes
+import { FilterCompletePipe } from '../pipes/filter-complete/filter-complete';
+
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
     PendingPage,
     FinishPage,
-    AddPage
+    AddPage,
+    FilterCompletePipe
   ],
   imports: [
     BrowserModule,
